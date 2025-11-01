@@ -24,9 +24,9 @@ VoiceInk is a native macOS application that transcribes what you say to text alm
 
 ![VoiceInk Mac App](https://github.com/user-attachments/assets/12367379-83e7-48a6-b52c-4488a6a04bba)
 
-After dedicating the past 5 months to developing this app, I've decided to open source it for the greater good. 
+After dedicating the past 5 months to developing this app, I've decided to make it completely free and open source for the greater good. 
 
-My goal is to make it **the most efficient and privacy-focused voice-to-text solution for macOS** that is a joy to use. While the source code is now open for experienced developers to build and contribute, purchasing a license helps support continued development and gives you access to automatic updates, priority support, and upcoming features.
+My goal is to make it **the most efficient and privacy-focused voice-to-text solution for macOS** that is a joy to use. VoiceInk is now completely free with all features available to everyone. If you find it useful, consider supporting the project through donations or contributions.
 
 ## Features
 
@@ -42,7 +42,7 @@ My goal is to make it **the most efficient and privacy-focused voice-to-text sol
 ## Get Started
 
 ### Download
-Get the latest version with a free trial from [tryvoiceink.com](https://tryvoiceink.com). Your purchase helps me work on VoiceInk full-time and continuously improve it with new features and updates.
+Get the latest version for free from [tryvoiceink.com](https://tryvoiceink.com). VoiceInk is now completely free and open source!
 
 #### Homebrew
 Alternatively, you can install VoiceInk via `brew`:
@@ -52,7 +52,7 @@ brew install --cask voiceink
 ```
 
 ### Build from Source
-As an open-source project, you can build VoiceInk yourself by following the instructions in [BUILDING.md](BUILDING.md). However, the compiled version includes additional benefits like automatic updates, priority support via Discord and email, and helps fund ongoing development.
+As an open-source project, you can build VoiceInk yourself by following the instructions in [BUILDING.md](BUILDING.md).
 
 ## Requirements
 

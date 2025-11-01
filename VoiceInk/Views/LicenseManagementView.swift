@@ -38,7 +38,7 @@ struct LicenseManagementView: View {
                         .foregroundStyle(.blue)
                     
                     HStack(alignment: .lastTextBaseline, spacing: 8) { 
-                        Text(licenseViewModel.licenseState == .licensed ? "VoiceInk Pro" : "Upgrade to Pro")
+                        Text("VoiceInk")
                             .font(.system(size: 32, weight: .bold))
                         
                         Text("v\(appVersion)")
@@ -48,9 +48,7 @@ struct LicenseManagementView: View {
                     }
                 }
                 
-                Text(licenseViewModel.licenseState == .licensed ?
-                     "Thank you for supporting VoiceInk" :
-                     "Transcribe what you say to text instantly with AI")
+                Text("Free & Open Source Voice to Text")
                     .font(.title3)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -219,13 +217,13 @@ struct LicenseManagementView: View {
             // Status Card
             VStack(spacing: 24) {
                 HStack {
-                    Image(systemName: "checkmark.circle.fill")
+                    Image(systemName: "heart.circle.fill")
                         .font(.system(size: 24))
-                        .foregroundStyle(.green)
-                    Text("License Active")
+                        .foregroundStyle(.pink)
+                    Text("Free & Open Source")
                         .font(.headline)
                     Spacer()
-                    Text("Active")
+                    Text("Free")
                         .font(.caption)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 4)
@@ -235,33 +233,34 @@ struct LicenseManagementView: View {
                 
                 Divider()
                 
-                if licenseViewModel.activationsLimit > 0 {
-                    Text("This license can be activated on up to \(licenseViewModel.activationsLimit) devices")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                } else {
-                    Text("You can use VoiceInk Pro on all your personal devices")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
+                Text("VoiceInk is now free and open source! Enjoy all features without any restrictions.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
             }
             .padding(32)
             .background(CardBackground(isSelected: false))
             .shadow(color: .black.opacity(0.05), radius: 10)
             
-            // Deactivation Card
+            // Support Card
             VStack(alignment: .leading, spacing: 16) {
-                Text("License Management")
+                Text("Support Development")
                     .font(.headline)
+                
+                Text("If you love VoiceInk, consider supporting its development:")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
 
-                Button(role: .destructive, action: {
-                    licenseViewModel.removeLicense()
+                Button(action: {
+                    if let url = URL(string: "https://buymeacoffee.com/beingpax") {
+                        NSWorkspace.shared.open(url)
+                    }
                 }) {
-                    Label("Deactivate License", systemImage: "xmark.circle.fill")
+                    Label("Buy Me a Coffee", systemImage: "heart.fill")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(.borderedProminent)
             }
             .padding(32)
             .background(CardBackground(isSelected: false))

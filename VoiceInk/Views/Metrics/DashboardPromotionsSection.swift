@@ -5,21 +5,13 @@ struct DashboardPromotionsSection: View {
     let licenseState: LicenseViewModel.LicenseState
     
     private var shouldShowUpgradePromotion: Bool {
-        switch licenseState {
-        case .trial(let daysRemaining):
-            return daysRemaining <= 2
-        case .trialExpired:
-            return true
-        case .licensed:
-            return false
-        }
+        // App is now free - no upgrade promotion needed
+        return false
     }
     
     private var shouldShowAffiliatePromotion: Bool {
-        if case .licensed = licenseState {
-            return true
-        }
-        return false
+        // App is free for everyone - show affiliate to all users
+        return true
     }
     
     private var shouldShowPromotions: Bool {
